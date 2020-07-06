@@ -15,9 +15,7 @@ mongoose.Promise = global.Promise;
 //Adds connection to database using mongoose
 //for <dbuser>:replace with your username, <dbpassword>: replace with your password.
 //<DATABASE_URL>: replace with database url, example:ds234562.mlab.com:17283
-mongoose.connect('estebanramo@gmail.com:O6w$4bTI4dc@https://cloud.mongodb.com/v2/5efaab999caba64f94f0dacb#clusters/detail/Agendamiento', {
-  useMongoClient: true
-});
+mongoose.connect('access:xDn9aVU4gQVu1lHg@agendamiento.ztzka.gcp.mongodb.net/agendamiento-shard-00-02.ztzka.gcp.mongodb.net:27017?retryWrites=true&w=majority');
 
 
 //This enabled CORS, Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) 
@@ -35,6 +33,8 @@ app.all('/*', function(req, res, next) {
     next();
   }
 });
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');// uncomment after placing your favicon in /public

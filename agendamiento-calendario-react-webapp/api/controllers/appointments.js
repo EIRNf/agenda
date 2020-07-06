@@ -3,6 +3,8 @@ const Model = require('../models/index');
 const { Appointment, Slot} = Model;
 
 const Nexmo = require("nexmo");
+
+
 const appointmentController = {
   all(req, res) {
     // Returns all appointments
@@ -14,7 +16,9 @@ const appointmentController = {
       slot_date: requestBody.slot_date,
       created_at: Date.now()
     });
+
     newslot.save();
+    
     // Creates a new record from a submitted form
     var newappointment = new Appointment({
       name: requestBody.name,
@@ -22,8 +26,8 @@ const appointmentController = {
       phone: requestBody.phone,
       slots: newslot._id
     });    const nexmo = new Nexmo({
-      apiKey: "YOUR_API_KEY",
-      apiSecret: "YOUR_API_SECRET"
+      apiKey: "6ea7fe3b",
+      apiSecret: "ynhv542Y5gZPw8gY"
     });    let msg =
       requestBody.name +
       " " +
